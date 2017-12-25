@@ -1,0 +1,106 @@
+.player{
+    width: 600px;
+    height: 600px;
+}
+.top-cover{
+    position: relative;
+    width: 320px;
+    height: 320px;
+}
+.pic{
+    display: block;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 10px;  
+    z-index: 3;
+    border-radius: 50%;
+}
+.pic-stop{
+    left: 10px;
+}
+.pic-animation{
+    animation: musicPlayPic 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear
+}
+.cover{
+    position: relative;
+    top: 0px;
+    width: 160px;
+    height: 320px;
+    background-color: #000;
+    z-index: 5;
+}
+.cover-stop{
+    left: 0px;
+}
+.cover-animation{
+    animation: musicPlayCover 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear
+}
+.cover::after{
+    content: '';
+    display: block;
+    width: 25px;
+    height: 50px;
+    border-radius: 25px 0 0 25px;
+    background-color: #fff;
+    position: absolute;
+    top: 135px;
+    left: 135px;
+}
+
+.progress{
+    width: 300px;
+    margin: 15px 0 5px 0;
+}
+.controls{
+    width: 400px;
+    height: 80px;
+    margin: 10px;
+}
+#components-musiclist{
+    position: absolute;
+    top: 90px;
+    left: 0px;
+    width: 350px;
+    transform: translateX( -350px );
+}
+#components-musiclist li{
+    width: 100%;
+    padding: 5px;
+}
+#show-list{
+    position: absolute;
+    top: 0;
+    left: 350px;
+    width: 20px;
+    font-size: 20px;
+    height: 80px;
+    border: 1px solid #000;
+    z-index: 999;
+}
+.musiclist-show{
+    transform: translateX( 0 ) !important;
+}
+.green{
+    color: green;
+}
+@keyframes musicPlayCover{
+    from{
+
+    }
+    to {
+        transform: translateX( -80px );
+    }
+}
+@keyframes musicPlayPic{
+    form {
+        transform: rotate(0);
+    }
+    to {
+        transform: translateX( 80px ) rotate(360deg);
+    }
+}
